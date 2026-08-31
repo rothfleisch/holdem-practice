@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10281f">
+  <meta name="description" content="A Texas Hold'em odds practice table.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>Hold'em Practice Table</title>
+</head>
+<body>
+  <main class="table-shell">
+    <header>
+      <div>
+        <p class="eyebrow">TEXAS HOLD'EM TRAINER</p>
+        <h1>Practice Table</h1>
+      </div>
+      <button class="new-hand" id="newHand">New hand</button>
+    </header>
+
+    <section class="felt hero" aria-label="Your hand and win odds">
+      <div class="section-heading"><span>Your hand</span><span id="street">PRE-FLOP</span></div>
+      <div class="hand-row"><div class="cards" id="holeCards"></div><div class="equity"><strong id="winOdds">—</strong><span>estimated chance to win</span></div></div>
+      <p class="note" id="equityNote">Choose a table size to run the simulation.</p>
+    </section>
+
+    <section class="panel"><div class="section-heading"><span>Players at the table</span><span id="playerLabel">2 players</span></div>
+      <div class="player-grid" id="playerGrid" role="group" aria-label="Number of players"></div>
+    </section>
+
+    <section class="panel"><div class="section-heading"><span>Community cards</span><span id="boardLabel">Not dealt</span></div>
+      <div class="board-row"><div class="cards board-cards" id="boardCards"></div><button id="dealNext" class="deal-button">Deal flop</button></div>
+    </section>
+
+    <section class="panel odds-panel"><div class="section-heading"><span>What can you still make?</span><span id="drawLabel">Two cards to come</span></div>
+      <div id="drawOdds" class="draw-grid"></div>
+      <p class="micro">These are chances of finishing with each hand category or better from the cards still to come. They are not betting advice.</p>
+    </section>
+
+    <section class="doyle" aria-label="Doyle Brunson inspired read">
+      <p class="eyebrow">TEXAS DOLLY'S READ</p>
+      <p id="doyleAdvice">Deal a hand to get a Doyle-inspired practice note.</p>
+      <small>Inspired by Brunson's <em>Super/System</em> power-poker approach—not a claim about what he would do in this exact modern spot.</small>
+    </section>
+
+    <details class="sources"><summary>How the numbers work</summary>
+      <p>Win odds are a local Monte Carlo estimate: unknown cards are shuffled, opponent hands are dealt, and the best five-card Hold'em hand wins each trial. Draw odds enumerate all remaining runouts exactly.</p>
+      <p>Reference material: <a href="https://www.pokernews.com/poker-tools/poker-odds-calculator.htm" target="_blank" rel="noreferrer">PokerNews odds calculator</a> (street-by-street odds) and <a href="https://ks-poker.com/en/resources/library-books/super-system" target="_blank" rel="noreferrer">Super/System overview</a> (Brunson's approach).</p>
+    </details>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
