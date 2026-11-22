@@ -29,6 +29,23 @@
       <div class="player-grid" id="playerGrid" role="group" aria-label="Number of players"></div>
     </section>
 
+    <section class="panel card-entry" aria-label="Choose cards for a real situation">
+      <div class="section-heading"><span>Practice mode</span><span>Local only</span></div>
+      <div class="mode-switch" role="group" aria-label="Choose how cards are selected">
+        <button id="randomMode" class="active" type="button">Random deal</button>
+        <button id="manualMode" type="button">Enter real cards</button>
+      </div>
+      <div id="manualEntry" class="manual-entry" hidden>
+        <label for="holeInput">My two cards</label>
+        <input id="holeInput" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Example: A♠ K♦" aria-describedby="cardHelp cardFeedback">
+        <label for="boardInput">Community cards dealt so far</label>
+        <input id="boardInput" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Example: 7♥ 8♣ 9♦">
+        <p id="cardHelp" class="micro entry-help">Use a space, comma, or no space between cards. Type <strong>As Kd</strong>, <strong>A♠ K♦</strong>, or <strong>10h Jc Qd</strong>.</p>
+        <div class="entry-actions"><button id="clearActual" type="button" class="text-button">Clear cards</button><span id="cardFeedback" class="input-feedback" role="status"></span></div>
+      </div>
+      <p class="micro mode-note">Enter cards as they appear in a friendly game to build intuition for the odds. This app stays entirely on your device and does not connect to any game or account.</p>
+    </section>
+
     <section class="panel"><div class="section-heading"><span>Community cards</span><span id="boardLabel">Not dealt</span></div>
       <div class="board-row"><div class="cards board-cards" id="boardCards"></div><button id="dealNext" class="deal-button">Deal flop</button></div>
     </section>
